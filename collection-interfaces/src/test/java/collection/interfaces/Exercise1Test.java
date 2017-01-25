@@ -61,8 +61,8 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Create a {@link UnaryOperator} which returns given string wrapped with "()". Replace the elements in {@link nameList} with string
          * wrapped with "()" using {@link List#replaceAll} .
          */
-        UnaryOperator<Object> unaryOperator = null;
-        // nameList.
+        UnaryOperator<String> unaryOperator = x -> x.replace(x, "(" + x + ")");
+        nameList.replaceAll(unaryOperator);
 
         assertThat(nameList.toString(), is("[(Joe), (Steven), (Patrick), (Chris)]"));
     }
